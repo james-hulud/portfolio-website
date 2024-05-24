@@ -1,12 +1,13 @@
 import express, { Request, Response } from "express";
-import { query } from "./database";
+import { Database } from "./database";
 
 const app = express();
 const port = process.env.PORT || 3001;
+const db = new Database();
 
 app.get("/", async (req: Request, res: Response) => {
   try {
-    const result = await query("SELECT rolname FROM pg_roles;");
+    const result = await db.query('SELECT * FROM "Project" WHERE title != \'Example Project\';');
     res.json(result);
   } catch (error) {
     console.error(error);

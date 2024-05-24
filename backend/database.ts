@@ -1,27 +1,38 @@
 import { Pool, QueryResult } from "pg";
 
-const pool = new Pool({
-  user: "james",
-  host: "localhost",
-  database: "postgres",
-  password: "",
-  port: 5432,
-});
+export class Database {
+  pool: Pool;
+  databaseName: string;
 
-// Listen for the 'connect' event
-pool.on("connect", () => {
-  console.log("Connected to PostgreSQL database");
-});
+  constructor() {
+    this.databaseName = "postgres";
 
-export const query = async (
-  queryText: string,
-  params?: any[]
-): Promise<any[]> => {
-  const client = await pool.connect();
-  try {
-    const result: QueryResult = await client.query(queryText, params);
-    return result.rows;
-  } finally {
-    client.release();
+    this.pool = new Pool({
+      user: "james",
+      host: "localhost",
+      database: this.databaseName,
+      password: "",
+      port: 5432,
+    });
   }
-};
+
+  testConnection = () => {
+    this.pool.on("connect", () => {
+      console.log(`Connected to db: ${this.databaseName}`);
+    });
+  };
+
+  query = async (queryText: string, params?: any[]): Promise<any[]> => {
+    const client = await this.pool.connect();
+    try {
+      const result: QueryResult = await client.query(queryText, params);
+      return result.rows;
+    } finally {
+      client.release();
+    }
+  };
+
+  createTable = async () => {
+    console.log("Creating table...");
+  };
+}
