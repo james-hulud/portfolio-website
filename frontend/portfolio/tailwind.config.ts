@@ -16,5 +16,14 @@ const config: Config = {
     },
   },
   plugins: [],
+  fontFace: {
+    "OpenSans-Regular": {
+      fontFamily: "Open-sans-regular",
+      fontStyle: "normal",
+      fontWeight: "normal",
+      fontDisplay: "swap",
+      src: ["~/fonts/OpenSans-Regular.ttf"],
+    },
+  },
 };
 export default config;

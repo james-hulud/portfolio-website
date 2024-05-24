@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fullscreen__container {
+  @media (min-height: 100vh) {
+    max-height: 15rem;
+  }
+}
+
+body {
+  animation: fadeIn ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+.block__slideshow {
+  width: 100%; /* Adjust this to the viewport width you want, like 100vw or 800px */
+  position: relative;
+  display: flex;
+  animation: slide 20s infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  10% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(-100%);
+  }
+  35% {
+    transform: translateX(-100%);
+  }
+  45% {
+    transform: translateX(-200%);
+  }
+  60% {
+    transform: translateX(-200%);
+  }
+  70% {
+    transform: translateX(-300%);
+  }
+  85% {
+    transform: translateX(-300%);
+  }
+}
