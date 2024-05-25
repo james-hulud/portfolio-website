@@ -1,21 +1,32 @@
-import { prisma } from "@/lib/prisma";
-import ProjectSection from "./ProjectSection";
+"use client";
 
-const ProjectList = async () => {
-  const projects = await prisma.project.findMany({
-    where: {
-      title: {
-        not: "Example Project",
-      },
-    },
-  });
-  const collaborations = await prisma.collaboration.findMany({
-    where: {
-      title: {
-        not: "Example collaboration",
-      },
-    },
-  });
+import ProjectSection from "./ProjectSection";
+import Loading from "./Loading";
+import { useEffect, useState } from "react";
+import { fetchProjects, fetchCollaborations } from "@/api/api";
+
+const ProjectList = () => {
+  const [projects, setProjects] = useState([]);
+  const [collaborations, setCollaborations] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setProjects(await fetchProjects());
+        setCollaborations(await fetchCollaborations());
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="flex flex-col m-10 sm:mx-10 lg:mx-60 items-center">

@@ -3,13 +3,15 @@ import { Pool, QueryResult } from "pg";
 export class Database {
   pool: Pool;
   databaseName: string;
+  host: string;
 
   constructor() {
     this.databaseName = "postgres";
+    this.host = "localhost";
 
     this.pool = new Pool({
       user: "james",
-      host: "localhost",
+      host: this.host,
       database: this.databaseName,
       password: "",
       port: 5432,

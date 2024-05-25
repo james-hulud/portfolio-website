@@ -1,16 +1,25 @@
-import { prisma } from "@/lib/prisma";
+"use client";
 
-const ContactMe = async () => {
+import { ChangeEvent, FormEvent, SyntheticEvent, useState } from "react";
+
+const ContactMe = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
   const submitQuery = () => {
-    // validate email first
-    console.log("Query submitted");
+    console.log(name, email, subject, message);
   };
 
-  // const user = await prisma.user.findFirst({
-  //   where: {
-  //     email: "test@test.com",
-  //   },
-  // });
+  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setName(e.target.value);
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setEmail(e.target.value);
+  const handleSubjectChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setSubject(e.target.value);
+  const handleMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) =>
+    setMessage(e.target.value);
 
   return (
     <div className="flex flex-col m-10 sm:mx-10 lg:mx-60 items-center">
@@ -22,23 +31,43 @@ const ContactMe = async () => {
         className="flex flex-col items-center [&>*]:rounded [&>*]:m-5 [&>*]:p-1 [&>*]:border [&>*]:border-gray [&>*]:w-80 w-full"
       >
         <input
-          className="w-80"
+          name="name"
           type="text"
           placeholder="Name"
+          onChange={handleNameChange}
+          className="w-80"
           maxLength={50}
           required
         />
-        <input type="email" placeholder="Email" maxLength={50} required />
-        <input type="text" placeholder="Subject" maxLength={100} required />
+        <input
+          name="email"
+          type="email"
+          placeholder="Email"
+          onChange={handleEmailChange}
+          maxLength={50}
+          required
+        />
+        <input
+          name="subject"
+          type="text"
+          placeholder="Subject"
+          onChange={handleSubjectChange}
+          maxLength={100}
+          required
+        />
         <textarea
+          name="message"
           className="h-52"
           placeholder="Message"
+          onChange={handleMessageChange}
           maxLength={300}
           required
         ></textarea>
         <input
+          name="submit"
           className="transition duration-200 hover:bg-gray-100"
           type="submit"
+          onClick={submitQuery}
         />
       </form>
       {/* pulled from db */}

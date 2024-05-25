@@ -16,15 +16,15 @@ body {
   overflow-x: hidden;
 }
 
-.paused {
-  animation-play-state: paused;
-}
-
 .block__slideshow {
   width: 100%; /* Adjust this to the viewport width you want, like 100vw or 800px */
   position: relative;
   display: flex;
   animation: slide 20s infinite;
+}
+
+.block__fadeout {
+  animation: fadeOut ease-out 1s;
 }
 
 @keyframes fadeIn {
@@ -34,6 +34,16 @@ body {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
