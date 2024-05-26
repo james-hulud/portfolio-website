@@ -16,6 +16,20 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  --background: white;
+  --foreground: black;
+  --primary-color: blue;
+  --link-hover-color: darkblue;
+}
+
+[data-theme="dark"] {
+  --background: black;
+  --foreground: white;
+  --primary-color: deepskyblue;
+  --link-hover-color: lightblue;
+}
+
 .block__slideshow {
   width: 100%; /* Adjust this to the viewport width you want, like 100vw or 800px */
   position: relative;

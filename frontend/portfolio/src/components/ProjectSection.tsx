@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export interface ProjectObject {
   id: number;
@@ -20,12 +21,13 @@ const ProjectSection = (props: { project: ProjectObject }) => {
   const slideshowDimension = 5000;
   const stackImgs: React.JSX.Element[] = [];
   const slideshowImgs: React.JSX.Element[] = [];
+  const { theme } = useTheme();
 
   const techStack: TechStackDict = {
     ["html"]: "file-type-html.svg",
     ["bootstrap"]: "bootstrap.svg",
     ["js"]: "javascript-js.svg",
-    ["flask"]: "flask.svg",
+    ["flask"]: theme === "light" ? "flask.svg" : "flask white.svg",
     ["python"]: "python.svg",
     ["postgresql"]: "",
     ["tailwind"]: "",
@@ -67,13 +69,23 @@ const ProjectSection = (props: { project: ProjectObject }) => {
       <div className="flex sm:text-2xl lg:text-3xl items-center [&>*]:mx-2">
         <div>{props.project.title}</div>
         <Link href={props.project.githubLink}>
-          <Image
-            className="transition-opacity duration-200 hover:opacity-50"
-            src="/external/github.svg"
-            width={40}
-            height={40}
-            alt="github_logo"
-          />
+          {theme === "light" ? (
+            <Image
+              className="transition-opacity duration-200 hover:opacity-50"
+              src="/external/github.svg"
+              width={40}
+              height={40}
+              alt="github_logo"
+            />
+          ) : (
+            <Image
+              className="transition-opacity duration-200 hover:opacity-50"
+              src="/external/github white.svg"
+              width={40}
+              height={40}
+              alt="github_logo"
+            />
+          )}
         </Link>
       </div>
       <div className="overflow-hidden rounded shadow-2xl">

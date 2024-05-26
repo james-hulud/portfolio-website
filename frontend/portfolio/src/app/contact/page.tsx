@@ -1,5 +1,5 @@
 import React from "react";
-import ContactMe from "../(components)/ContactMe";
+import ContactMe from "../../components/ContactMe";
 
 const app = () => {
   return (
