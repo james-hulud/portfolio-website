@@ -19,15 +19,36 @@ body {
 :root {
   --background: white;
   --foreground: black;
-  --primary-color: blue;
-  --link-hover-color: darkblue;
 }
 
-[data-theme="dark"] {
+[data-theme="dark"] .themed-element {
   --background: black;
   --foreground: white;
   --primary-color: deepskyblue;
   --link-hover-color: lightblue;
+  --tw-text-opacity: 1;
+  --tw-border-opacity: 1;
+  color: rgb(249 115 22 / var(--tw-border-opacity));
+}
+
+[data-theme="dark"] .themed-element-hover:hover {
+  border-color: rgb(249 115 22);
+}
+
+[data-theme="light"] .themed-element {
+  --background: white;
+  --foreground: black;
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+[data-theme="light"] .themed-element-hover:hover {
+  border-color: rgb(59 130 246);
+}
+
+[data-theme="dark"] .nav-bg-theme {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 
 .block__slideshow {

@@ -34,7 +34,7 @@ const About = () => {
           what I made it with), what I am currently making, and thoughts of mine
           which I thought were worth posting out into the void that is the
           internet, you'll find these on my{" "}
-          <Link href="/blog" className="text-blue-500 font-bold">
+          <Link href="/blog" className="themed-element font-bold">
             blog
           </Link>
           .<br />
