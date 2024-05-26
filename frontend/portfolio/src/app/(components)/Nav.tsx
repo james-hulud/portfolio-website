@@ -1,7 +1,8 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
-const Nav = () => {
+const Nav = (props: { darkMode: boolean }) => {
   return (
     <nav className="shadow-xl bg-gray-50">
       <div className="flex justify-between py-5 px-10">
@@ -37,7 +38,23 @@ const Nav = () => {
               </Link>
             </li>
             <li className="hover:scale-110 hover:bg-gray-100">
-              <button>Dark mode</button>
+              <button>
+                {props.darkMode ? (
+                  <Image
+                    src="/nav/moon.svg"
+                    width={20}
+                    height={20}
+                    alt="dark_mode"
+                  />
+                ) : (
+                  <Image
+                    src="/nav/sun.svg"
+                    width={20}
+                    height={20}
+                    alt="dark_mode"
+                  />
+                )}
+              </button>
             </li>
           </ul>
         </div>

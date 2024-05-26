@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, SyntheticEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useRouter } from "next/navigation";
 
@@ -12,9 +12,8 @@ const ContactMe = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-  const submitQuery = (e: any) => {
+  const submitQuery = (e: SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
     e.preventDefault();
-
     let templateParams = {
       from_name: name,
       from_email: email,

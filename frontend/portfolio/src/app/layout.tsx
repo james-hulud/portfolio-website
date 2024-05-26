@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${open_sans.className}`}>
-        <Nav />
+        <Nav darkMode={false} />
         {children}
       </body>
     </html>
