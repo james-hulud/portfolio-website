@@ -59,7 +59,7 @@ const ContactMe = () => {
           </div>
         </div>
       </div>
-      <div className="font-bold mt-5">
+      <div className="font-bold">
         Feel free to contact me using this form!
       </div>
 
@@ -73,7 +73,7 @@ const ContactMe = () => {
           type="text"
           placeholder="Name"
           onChange={handleNameChange}
-          className="w-80"
+          className="w-80 focus:ring-0  focus:outline-blue-500 form-field-theme"
           maxLength={50}
           required
         />
@@ -82,6 +82,7 @@ const ContactMe = () => {
           type="email"
           placeholder="Email"
           onChange={handleEmailChange}
+          className="w-80 focus:ring-0  focus:outline-blue-500 form-field-theme"
           maxLength={50}
           required
         />
@@ -90,20 +91,21 @@ const ContactMe = () => {
           type="text"
           placeholder="Subject"
           onChange={handleSubjectChange}
+          className="w-80 focus:ring-0  focus:outline-blue-500 form-field-theme"
           maxLength={100}
           required
         />
         <textarea
           name="message"
-          className="h-32 max-h-96 min-h-32"
           placeholder="Message"
           onChange={handleMessageChange}
+          className="h-32 max-h-96 min-h-32 w-80 focus:ring-0  focus:outline-blue-500 form-field-theme"
           maxLength={300}
           required
         ></textarea>
         <input
           name="submit"
-          className="transition duration-200 hover:bg-gray-100"
+          className="transition duration-200 hover:border-blue-500 themed-element-hover"
           type="submit"
         />
       </form>
