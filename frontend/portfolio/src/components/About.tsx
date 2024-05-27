@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="flex flex-col mt-10 lg:mx-60 lg:flex-row items-center">
+    <div className="flex flex-col xl:flex-row items-center pt-10">
       <div className="flex flex-col items-center">
         <div className="rounded-full overflow-hidden w-64">
           <Image
@@ -16,13 +16,14 @@ const About = () => {
           />
         </div>
         <div>
-          <h3 className="py-2">@James</h3>
+          <h3 className="pt-2 font-medium">@James</h3>
         </div>
       </div>
-      <div className="flex flex-grow justify-center md:mx-10 text-justify w-2/3">
-        <p>
-          Hi there! &#x1F44B;
-          <br />
+      <div className="pt-10 md:pt-0 lg:pt-0 xl:pl-10">
+        <p className="text-center md:text-justify lg:text-justify p-0 m-0">
+          Howdy! &#x1F44B;
+        </p>
+        <p className="text-justify p-0 m-0">
           <br />
           I&apos;m James, a Computer Science student from Cardiff, Wales. I love
           building websites and any other software projects I can think of,

@@ -17,16 +17,17 @@ type TechStackDict = {
   [key: string]: string;
 };
 
-const ProjectSection = (props: { project: ProjectObject }) => {
+const ProjectSection = (props: { project: ProjectObject; index: string }) => {
   const slideshowDimension = 5000;
   const stackImgs: React.JSX.Element[] = [];
   const slideshowImgs: React.JSX.Element[] = [];
   const { theme } = useTheme();
 
-  const pauseAnimation = () => {
-    const element = document.getElementById("slideshow");
+  const controlAnimation = () => {
+    const element = document.getElementById(`${props.index}`);
     if (element) {
-      element.style.animationPlayState = "paused";
+      element.style.animationPlayState =
+        element.style.animationPlayState === "paused" ? "running" : "paused";
     }
   };
   const techStack: TechStackDict = {
@@ -73,7 +74,7 @@ const ProjectSection = (props: { project: ProjectObject }) => {
   return (
     <div className="flex flex-col items-center [&>*]:mt-3 [&>*]:text-justify">
       <div className="flex sm:text-2xl lg:text-3xl items-center [&>*]:mx-2">
-        <div>{props.project.title}</div>
+        <div className="font-medium">{props.project.title}</div>
         <Link href={props.project.githubLink}>
           {theme === "light" ? (
             <Image
@@ -94,12 +95,24 @@ const ProjectSection = (props: { project: ProjectObject }) => {
           )}
         </Link>
       </div>
-      <div className="overflow-hidden rounded shadow-2xl">
-        <div id="slideshow" className="block__slideshow">
+      <div
+        className="overflow-hidden rounded shadow-2xl flex items-center justify-center"
+        onClick={controlAnimation}
+      >
+        <div className="absolute z-50">
+          <button className="text-black font-bold hidden">
+            <Image
+              src="/slideshow/pause.svg"
+              width={50}
+              height={50}
+              alt="pause"
+            ></Image>
+          </button>
+        </div>
+        <div id={`${props.index}`} className="block__slideshow">
           {getSlideshowImages()}
         </div>
       </div>
-      <button onClick={pauseAnimation}>Hello</button>
       <div>{props.project.description}</div>
       <div className="font-bold">Created with...</div>
       <div className="flex flex-wrap [&>*]:m-4">{getTechStackImgs()}</div>

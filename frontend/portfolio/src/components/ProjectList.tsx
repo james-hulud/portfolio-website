@@ -29,13 +29,13 @@ const ProjectList = () => {
   }
 
   return (
-    <div className="flex flex-col mx-10 sm:mx-10 lg:mx-60 items-center">
+    <div className="flex flex-col pt-10 items-center">
       <div className="flex flex-col items-center">
-        <div className="font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl py-10">
+        <div className="font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl pb-10">
           Personal Projects
         </div>
         {projects.map((project, index) => (
-          <ProjectSection key={index} project={project} />
+          <ProjectSection key={index} index={`proj${index}`} project={project} />
         ))}
       </div>
       <div className="flex flex-col items-center">
@@ -43,7 +43,7 @@ const ProjectList = () => {
           Collaborations
         </div>
         {collaborations.map((project, index) => (
-          <ProjectSection key={index} project={project} />
+          <ProjectSection key={index} index={`col${index}`} project={project} />
         ))}
       </div>
     </div>

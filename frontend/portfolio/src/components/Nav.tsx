@@ -62,7 +62,7 @@ const NavChanger = () => {
 
 const Nav = () => {
   return (
-    <nav className="shadow-xl bg-gray-100 nav-bg-theme">
+    <nav className="shadow-lg bg-gray-100 nav-bg-theme">
       <div className="flex justify-between py-5 px-10">
         <div className="font-extrabold justify-center content-center">
           <Link href="/">JAMESMDEV.COM</Link>
