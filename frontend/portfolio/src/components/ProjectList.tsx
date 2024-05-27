@@ -29,9 +29,9 @@ const ProjectList = () => {
   }
 
   return (
-    <div className="flex flex-col m-10 sm:mx-10 lg:mx-60 items-center">
-      <div className="flex flex-col items-center pb-10">
-        <div className="font-extrabold sm:text-4xl md:text-5xl lg:text-6xl">
+    <div className="flex flex-col mx-10 sm:mx-10 lg:mx-60 items-center">
+      <div className="flex flex-col items-center">
+        <div className="font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl py-10">
           Personal Projects
         </div>
         {projects.map((project, index) => (
@@ -39,7 +39,7 @@ const ProjectList = () => {
         ))}
       </div>
       <div className="flex flex-col items-center">
-        <div className="font-extrabold sm:text-4xl md:text-5xl lg:text-6xl">
+        <div className="font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl py-10">
           Collaborations
         </div>
         {collaborations.map((project, index) => (

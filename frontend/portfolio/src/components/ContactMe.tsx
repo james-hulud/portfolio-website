@@ -44,24 +44,22 @@ const ContactMe = () => {
     setMessage(e.target.value);
 
   return (
-    <div className="flex flex-col m-10 sm:mx-10 lg:mx-60 items-center text-justify text-wrap">
-      <div className="font-extrabold sm:text-4xl md:text-5xl lg:text-6xl">
+    <div className="flex flex-col m-10 sm:mx-10 lg:mx-60 items-center text-center  text-wrap">
+      <div className="font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
         Contact Me &#x1F468;&#x200D;&#x1F4BB;
       </div>
       <div>
         <div className="py-10">
           I am currently most interested in the opportunities below:
           <div className="flex flex-col items-center">
-            <ul className="list-disc">
-              <li>12 month placement for 2025/26 academic year</li>
+            <ul className="list-disc list-inside">
               <li>Fullstack developer internships</li>
+              <li>12 month placement for 2025/26 academic year</li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="font-bold">
-        Feel free to contact me using this form!
-      </div>
+      <div className="font-bold">Feel free to contact me using this form!</div>
 
       <form
         method="POST"

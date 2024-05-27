@@ -17,63 +17,67 @@ const TechStackBanner = () => {
     return null;
   }
   return (
-    <div className="flex flex-col m-10 lg:mx-60 items-center pb-10">
+    <div className="flex flex-col lg:mx-60 items-center pt-10 pb-4">
       <div className="font-bold">Tech Stack</div>
-      <div className="flex flex-wrap [&>*]:m-4 [&>*]:object-contain">
-        <Image
-          src="/techstack/React-icon.svg"
-          width={50}
-          height={50}
-          alt="react-icon"
-        />
-        <Image
-          src="/techstack/Typescript_logo_2020.svg"
-          width={50}
-          height={50}
-          alt="react-icon"
-        />
-        <Image
-          src="/techstack/Tailwind_CSS_Logo.svg"
-          width={50}
-          height={50}
-          alt="react-icon"
-        />
-        <Image
-          src="/techstack/Postgresql_elephant.svg"
-          width={50}
-          height={50}
-          alt="react-icon"
-        />
-        {theme === "light" ? (
+      <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row">
+        <span className="flex [&>*]:mx-4 [&>*]:mt-4 [&>*]:object-contain">
           <Image
-            src="/techstack/nextjs.svg"
+            src="/techstack/React-icon.svg"
             width={50}
             height={50}
             alt="react-icon"
           />
-        ) : (
           <Image
-            src="/techstack/nextjs white.svg"
+            src="/techstack/Typescript_logo_2020.svg"
             width={50}
             height={50}
             alt="react-icon"
           />
-        )}
-        {theme === "light" ? (
           <Image
-            src="/techstack/flask.svg"
+            src="/techstack/Tailwind_CSS_Logo.svg"
             width={50}
             height={50}
             alt="react-icon"
           />
-        ) : (
+        </span>
+        <span className="flex [&>*]:mx-4 [&>*]:mt-4 [&>*]:object-contain">
           <Image
-            src="/techstack/flask white.svg"
+            src="/techstack/Postgresql_elephant.svg"
             width={50}
             height={50}
             alt="react-icon"
           />
-        )}
+          {theme === "light" ? (
+            <Image
+              src="/techstack/nextjs.svg"
+              width={50}
+              height={50}
+              alt="react-icon"
+            />
+          ) : (
+            <Image
+              src="/techstack/nextjs white.svg"
+              width={50}
+              height={50}
+              alt="react-icon"
+            />
+          )}
+          {theme === "light" ? (
+            <Image
+              src="/techstack/flask.svg"
+              width={50}
+              height={50}
+              alt="react-icon"
+            />
+          ) : (
+            <Image
+              src="/techstack/flask white.svg"
+              width={50}
+              height={50}
+              alt="react-icon"
+            />
+          )}
+        </span>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 export const fetchProjects = async () => {
   try {
-    const response = await fetch("http://localhost:3001/projects");
+    // or http://localhost:3001/projects etc
+    const response = await fetch("http://james-mbp:3001/projects");
     if (!response.ok) {
       throw new Error("Error getting response");
     }
@@ -13,7 +14,7 @@ export const fetchProjects = async () => {
 
 export const fetchCollaborations = async () => {
   try {
-    const response = await fetch("http://localhost:3001/collaborations");
+    const response = await fetch("http://james-mbp:3001/collaborations");
     if (!response.ok) {
       throw new Error("Error getting response");
     }

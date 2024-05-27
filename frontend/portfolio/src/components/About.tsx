@@ -4,22 +4,21 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="flex m-10 sm:flex-col lg:mx-60 lg:flex-row items-center">
-      <div className="flex flex-col items-center ">
-        <div className="rounded-full overflow-hidden">
+    <div className="flex flex-col mt-10 lg:mx-60 lg:flex-row items-center">
+      <div className="flex flex-col items-center">
+        <div className="rounded-full overflow-hidden w-64">
           <Image
-            className="object-contain shadow-2xl"
+            className="object-contain shadow-2xl "
             src="/me.jpg"
             width={300}
-            height={50}
+            height={300}
             alt="me"
           />
         </div>
         <div>
-          <h3 className="pt-2">@James</h3>
+          <h3 className="py-2">@James</h3>
         </div>
       </div>
-
       <div className="flex flex-grow justify-center md:mx-10 text-justify w-2/3">
         <p>
           Hi there! &#x1F44B;
