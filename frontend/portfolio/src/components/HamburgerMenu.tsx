@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
 import Link from "next/link";
 import ThemeChanger from "./ThemeChanger";
 
-const HamburgerMenu = (props: { menuPosValue: number; theme: string }) => {
+const HamburgerMenu = (props: { menuPosValue: number; theme: string | undefined }) => {
   const colour = props.theme === "light" ? "white" : "black";
 
   return (
