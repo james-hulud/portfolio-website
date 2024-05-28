@@ -22,12 +22,12 @@ const NavChanger = () => {
     return null;
   }
 
-  return !isMd || !isLg ? (
+  return !isMd && !isLg ? (
     <div>
       <HamburgerIcon theme={theme} />
     </div>
   ) : (
-    <ul className="flex [&>*]:border-b [&>*]:border-gray [&>*]:m-2 [&>*]:p-1 [&>*]:transition [&>*]:duration-200">
+    <ul className="flex [&>*]:border-b [&>*]:border-gray-300 [&>*]:m-2 [&>*]:p-1 [&>*]:transition [&>*]:duration-200">
       <li className="hover:scale-110 themed-element-hover">
         <Link href="/">
           <button>Home</button>

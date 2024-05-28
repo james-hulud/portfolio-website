@@ -2,16 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.fullscreen__container {
-  @media (min-height: 100vh) {
-    max-height: 15rem;
-  }
+#_next {
+  min-height: 100vh;
 }
 
 body {
-  animation: fadeIn ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -50,6 +45,12 @@ body {
 [data-theme="dark"] .nav-bg-theme {
   --tw-bg-opacity: 1;
   background-color: rgba(35, 0, 0, 0.45);
+}
+
+[data-theme="light"] .nav-bg-theme {
+  --tw-border-opacity: 1;
+  border-width: 1px;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 [data-theme="dark"] .form-field-theme:focus {

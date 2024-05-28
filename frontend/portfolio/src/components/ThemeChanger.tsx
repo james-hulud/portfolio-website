@@ -21,7 +21,7 @@ const ThemeChanger = () => {
 
   return theme === "light" ? (
     <button onClick={() => setTheme("dark")}>
-      {!isMd || !isLg ? (
+      {!isMd && !isLg ? (
         <Image src="/nav/sun.svg" width={30} height={30} alt="light_mode" />
       ) : (
         <Image src="/nav/sun.svg" width={20} height={20} alt="light_mode" />
@@ -29,7 +29,7 @@ const ThemeChanger = () => {
     </button>
   ) : (
     <button onClick={() => setTheme("light")}>
-      {!isMd || !isLg ? (
+      {!isMd && !isLg ? (
         <Image
           src="/nav/moon white.svg"
           width={30}
