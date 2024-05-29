@@ -22,11 +22,11 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
   const slideshowDimension = 5000;
   const stackImgs: React.JSX.Element[] = [];
   const slideshowImgs: React.JSX.Element[] = [];
-  const { isSm } = useBreakpoint("sm");
   const { isMd } = useBreakpoint("md");
+  const { isLg } = useBreakpoint("lg");
   const { theme } = useTheme();
 
-  let buttonSize = !isSm && !isMd ? 30 : 50;
+  let buttonSize = !isMd && !isLg ? 30 : 50;
 
   const controlAnimation = () => {
     const element = document.getElementById(`${props.index}`);
@@ -123,7 +123,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
             <div className="absolute z-50">
               <Image
                 id={`pause${props.index}`}
-                className="bg-blue-500 rounded-full opacity-80 hidden"
+                className="bg-orange-500 rounded-full opacity-80 hidden"
                 src="/slideshow/pause.svg"
                 width={buttonSize}
                 height={buttonSize}
@@ -133,7 +133,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
             <div className="absolute z-50">
               <Image
                 id={`play${props.index}`}
-                className="bg-blue-500 rounded-full opacity-80 hidden"
+                className="bg-orange-500 rounded-full opacity-80 hidden"
                 src="/slideshow/play-arrow.svg"
                 width={buttonSize}
                 height={buttonSize}
@@ -146,7 +146,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
             <div className="absolute z-50">
               <Image
                 id={`pause${props.index}`}
-                className="bg-orange-500 rounded-full opacity-80 hidden"
+                className="bg-blue-500 rounded-full opacity-80 hidden"
                 src="/slideshow/pause.svg"
                 width={buttonSize}
                 height={buttonSize}
@@ -156,7 +156,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
             <div className="absolute z-50">
               <Image
                 id={`play${props.index}`}
-                className="bg-orange-500 rounded-full opacity-80 hidden"
+                className="bg-blue-500 rounded-full opacity-80 hidden"
                 src="/slideshow/play-arrow.svg"
                 width={buttonSize}
                 height={buttonSize}

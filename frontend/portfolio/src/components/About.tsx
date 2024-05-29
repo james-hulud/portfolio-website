@@ -8,7 +8,7 @@ const About = () => {
       <div className="flex flex-col items-center">
         <div className="rounded-full overflow-hidden w-64">
           <Image
-            className="object-contain shadow-2xl "
+            className="object-contain shadow-2xl"
             src="/me.jpg"
             width={300}
             height={300}
