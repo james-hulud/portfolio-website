@@ -32,7 +32,7 @@ const ProjectList = () => {
     <div className="flex flex-col pt-10 items-center">
       <div className="flex flex-col items-center">
         <div className="font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl pb-10">
-          Personal Projects
+          Projects
         </div>
         {projects.map((project, index) => (
           <ProjectSection key={index} index={`proj${index}`} project={project} />

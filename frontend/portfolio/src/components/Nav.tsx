@@ -65,7 +65,7 @@ const Nav = () => {
     <nav className="shadow-lg bg-gray-100 nav-bg-theme">
       <div className="flex justify-between py-5 px-10">
         <div className="font-extrabold justify-center content-center">
-          <Link href="/">JAMESMDEV.COM</Link>
+          <Link href="/">JAMESMDAVIES.COM</Link>
         </div>
         <div className="flex items-center">
           <NavChanger />

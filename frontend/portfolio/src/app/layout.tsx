@@ -13,8 +13,8 @@ const open_sans = Open_Sans({
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "jamesmdev",
-  description: "JAMESMDEV PORTFOLIO WEBSITE",
+  title: "James Davies | Software Developer",
+  description: "Portfolio website",
 };
 
 export const viewport: Viewport = {
