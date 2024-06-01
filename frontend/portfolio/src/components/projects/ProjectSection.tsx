@@ -91,8 +91,8 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
   };
 
   return (
-    <div className="flex flex-col items-center [&>*]:mt-3 [&>*]:text-justify">
-      <div className="flex sm:text-2xl lg:text-3xl items-center [&>*]:mx-2">
+    <div className="flex flex-col items-center pb-10">
+      <div className="flex sm:text-2xl lg:text-3xl items-center [&>*]:mx-2 mb-5">
         <div className="font-medium">{props.project.title}</div>
         <Link href={props.project.githubLink}>
           {theme === "light" ? (
@@ -170,9 +170,15 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
           {getSlideshowImages()}
         </div>
       </div>
-      <div>{props.project.description}</div>
+      <div>
+        <p id="desc" className="my-5 text-justify">
+          {props.project.description}
+        </p>
+      </div>
       <div className="font-bold">Created with...</div>
-      <div className="flex flex-wrap [&>*]:m-4">{getTechStackImgs()}</div>
+      <div className="flex flex-wrap [&>*]:mx-4 [&>*]:mt-4">
+        {getTechStackImgs()}
+      </div>
     </div>
   );
 };

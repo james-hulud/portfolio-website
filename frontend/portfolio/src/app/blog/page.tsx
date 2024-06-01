@@ -1,5 +1,5 @@
 import React from "react";
-import BlogHeader from "../../components/BlogHeader";
+import BlogHeader from "../../components/blog/BlogHeader";
 
 const app = () => {
   return (

@@ -16,7 +16,7 @@ const About = () => {
           />
         </div>
         <div>
-          <h3 className="pt-2 font-medium">@James</h3>
+          <h3 className="pt-2 font-medium effect-shine">@James</h3>
         </div>
       </div>
       <div className="pt-10 md:pt-0 lg:pt-0 xl:pl-10">

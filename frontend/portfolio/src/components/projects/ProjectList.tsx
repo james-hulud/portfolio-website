@@ -1,7 +1,7 @@
 "use client";
 
 import ProjectSection from "./ProjectSection";
-import Loading from "./Loading";
+import Loading from "../data/Loading";
 import { useEffect, useState } from "react";
 import { fetchProjects, fetchCollaborations } from "@/api/api";
 
@@ -29,17 +29,21 @@ const ProjectList = () => {
   }
 
   return (
-    <div className="flex flex-col pt-10 items-center">
+    <div className="flex flex-col items-center">
       <div className="flex flex-col items-center">
-        <div className="font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl pb-10">
+        <div className="font-extrabold text-4xl sm:text-4xl md:text-5xl lg:text-5xl py-10">
           Projects
         </div>
         {projects.map((project, index) => (
-          <ProjectSection key={index} index={`proj${index}`} project={project} />
+          <ProjectSection
+            key={index}
+            index={`proj${index}`}
+            project={project}
+          />
         ))}
       </div>
       <div className="flex flex-col items-center">
-        <div className="font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl py-10">
+        <div className="font-extrabold text-4xl sm:text-4xl md:text-5xl lg:text-5xl py-10">
           Collaborations
         </div>
         {collaborations.map((project, index) => (

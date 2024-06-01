@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./styles/globals.css";
-import Nav from "../components/Nav";
+import Nav from "../components/navbar/Nav";
 import { Open_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 

@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis:300,400);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -45,7 +47,7 @@ body {
 
 [data-theme="dark"] .nav-bg-theme {
   --tw-bg-opacity: 1;
-  background-color: rgb(10, 0, 48);
+  background-color: rgba(20, 20, 16, 0.5);
 }
 
 [data-theme="light"] .nav-bg-theme {
@@ -125,5 +127,42 @@ body {
   }
   85% {
     transform: translateX(-300%);
+  }
+}
+
+/* taken from:
+https://codepen.io/colloque/pen/poOLPg */
+
+[data-theme="light"] .effect-shine {
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.6) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 03s infinite;
+  color: #f97316;
+}
+
+[data-theme="dark"] .effect-shine {
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.6) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 3s infinite;
+  color: rgb(59 130 246);
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
   }
 }

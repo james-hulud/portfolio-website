@@ -1,7 +1,10 @@
+const url = "http://localhost:3001/";
+
 export const fetchProjects = async () => {
   try {
-    // or http://localhost:3001/projects etc
-    const response = await fetch("http://james-mbp:3001/projects");
+    // http://james-mbp:3001/projects
+    // http://localhost:3001/projects etc
+    const response = await fetch(`${url}projects`);
     if (!response.ok) {
       throw new Error("Error getting response");
     }
@@ -12,9 +15,22 @@ export const fetchProjects = async () => {
   }
 };
 
+export const fetchLastProject = async () => {
+  try {
+    const response = await fetch(`${url}lastproject`);
+    if (!response.ok) {
+      throw new Error("Error getting response");
+    }
+    const lastProjectData = await response.json();
+    return lastProjectData;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const fetchCollaborations = async () => {
   try {
-    const response = await fetch("http://james-mbp:3001/collaborations");
+    const response = await fetch(`${url}collaborations`);
     if (!response.ok) {
       throw new Error("Error getting response");
     }

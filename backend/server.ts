@@ -32,6 +32,17 @@ app.get("/projects", async (req: Request, res: Response) => {
   }
 });
 
+app.get("/lastproject", async (req: Request, res: Response) => {
+  try {
+    const result = await db.query(
+      'SELECT * FROM "Project" WHERE id=(SELECT MAX(id) FROM "Project") limit 1'
+    );
+    res.json(result[0]);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 app.get("/collaborations", async (req: Request, res: Response) => {
   try {
     const result = await db.query(
