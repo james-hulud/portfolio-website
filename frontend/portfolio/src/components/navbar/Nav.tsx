@@ -27,35 +27,38 @@ const NavChanger = () => {
       <HamburgerIcon theme={theme} />
     </div>
   ) : (
-    <ul className="flex [&>*]:border-b [&>*]:border-gray-300 [&>*]:m-2 [&>*]:p-1 [&>*]:transition [&>*]:duration-200">
-      <li className="hover:scale-110 themed-element-hover">
-        <Link href="/">
-          <button>Home</button>
-        </Link>
-      </li>
-      <li className="hover:scale-110 themed-element-hover">
-        <Link href="/about">
-          <button>About</button>
-        </Link>
-      </li>
-      <li className="hover:scale-110 themed-element-hover">
-        <Link href="/portfolio">
-          <button>Portfolio</button>
-        </Link>
-      </li>
-      <li className="hover:scale-110 themed-element-hover">
-        <Link href="/blog">
-          <button>Blog</button>
-        </Link>
-      </li>
-      <li className="hover:scale-110 themed-element-hover">
-        <Link href="/contact">
-          <button>Contact Me</button>
-        </Link>
-      </li>
-      <li className="hover:scale-110 themed-element-hover flex items-center">
-        <ThemeChanger />
-      </li>
+    <ul className="flex [&>*]:border-b [&>*]:border-gray-300 [&>*]:m-2 [&>*]:p-1">
+      <Link
+        href="/"
+        className="transition duration-200 hover:scale-110 themed-element-hover"
+      >
+        <button>Home</button>
+      </Link>
+      <Link
+        href="/about"
+        className="transition duration-200 hover:scale-110 themed-element-hover"
+      >
+        <button>About</button>
+      </Link>
+      <Link
+        href="/portfolio"
+        className="transition duration-200 hover:scale-110 themed-element-hover"
+      >
+        <button>Portfolio</button>
+      </Link>
+      <Link
+        href="/blog"
+        className="transition duration-200 hover:scale-110 themed-element-hover"
+      >
+        <button>Blog</button>
+      </Link>
+      <Link
+        href="/contact"
+        className="transition duration-200 hover:scale-110 themed-element-hover"
+      >
+        <button>Contact Me</button>
+      </Link>
+      <ThemeChanger />
     </ul>
   );
 };

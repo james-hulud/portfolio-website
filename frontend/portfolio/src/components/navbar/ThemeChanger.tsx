@@ -20,21 +20,40 @@ const ThemeChanger = () => {
   }
 
   return theme === "light" ? (
-    <button onClick={() => setTheme("dark")}>
+    <button
+      onClick={() => setTheme("dark")}
+      className="transition duration-200 hover:scale-110 themed-element-hover border-b border-gray-300"
+    >
       {!isMd && !isLg ? (
-        <Image src="/nav/moon.svg" width={30} height={30} alt="dark_mode" />
+        <Image
+          src="/nav/moon.svg"
+          width={30}
+          height={30}
+          alt="dark_mode"
+          className="pb-1"
+        />
       ) : (
-        <Image src="/nav/moon.svg" width={20} height={20} alt="dark_mode" />
+        <Image
+          src="/nav/moon.svg"
+          width={20}
+          height={20}
+          alt="dark_mode"
+          className="pb-1"
+        />
       )}
     </button>
   ) : (
-    <button onClick={() => setTheme("light")}>
+    <button
+      onClick={() => setTheme("light")}
+      className="transition duration-200 hover:scale-110 themed-element-hover border-b border-gray-300"
+    >
       {!isMd && !isLg ? (
         <Image
           src="/nav/sun white.svg"
           width={30}
           height={30}
           alt="light_mode"
+          className="pb-1"
         />
       ) : (
         <Image
@@ -42,6 +61,7 @@ const ThemeChanger = () => {
           width={20}
           height={20}
           alt="light_mode"
+          className="pb-1"
         />
       )}
     </button>

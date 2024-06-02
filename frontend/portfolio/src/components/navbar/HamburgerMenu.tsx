@@ -45,7 +45,7 @@ const HamburgerMenu = (props: {
               href="/"
               className="hover:scale-110 border-b border-gray-300 transition duration-200 themed-element-hover"
             >
-              <button>Home</button>
+              <button className="pb-1">Home</button>
             </Link>
           </li>
           <li className="flex justify-center">
@@ -53,7 +53,7 @@ const HamburgerMenu = (props: {
               href="/about"
               className="hover:scale-110 border-b border-gray-300 transition duration-200 themed-element-hover"
             >
-              <button>About</button>
+              <button className="pb-1">About</button>
             </Link>
           </li>
           <li className="flex justify-center">
@@ -61,7 +61,7 @@ const HamburgerMenu = (props: {
               href="/portfolio"
               className="hover:scale-110 border-b border-gray-300 transition duration-200 themed-element-hover"
             >
-              <button>Portfolio</button>
+              <button className="pb-1">Portfolio</button>
             </Link>
           </li>
           <li className="flex justify-center">
@@ -69,7 +69,7 @@ const HamburgerMenu = (props: {
               href="/blog"
               className="hover:scale-110 border-b border-gray-300 transition duration-200 themed-element-hover"
             >
-              <button>Blog</button>
+              <button className="pb-1">Blog</button>
             </Link>
           </li>
           <li className="flex justify-center">
@@ -77,45 +77,46 @@ const HamburgerMenu = (props: {
               href="/contact"
               className="hover:scale-110 border-b border-gray-300 transition duration-200 themed-element-hover"
             >
-              <button>Contact Me</button>
+              <button className="pb-1">Contact Me</button>
             </Link>
           </li>
           <li className="flex justify-center">
-            <div className="hover:scale-110 border-b border-gray-300 transition duration-200 themed-element-hover">
-              <ThemeChanger />
-            </div>
+            <ThemeChanger />
           </li>
         </ul>
       ) : (
-        <ul className="flex flex-col items-center [&>*]:border-b [&>*]:border-gray-300 [&>*]:m-2 [&>*]:p-1 [&>*]:transition [&>*]:duration-200">
-          <li className="hover:scale-110 themed-element-hover">
-            <Link href="/">
-              <button>Home</button>
-            </Link>
-          </li>
-          <li className="hover:scale-110 themed-element-hover">
-            <Link href="/about">
-              <button>About</button>
-            </Link>
-          </li>
-          <li className="hover:scale-110 themed-element-hover">
-            <Link href="/portfolio">
-              <button>Portfolio</button>
-            </Link>
-          </li>
-          <li className="hover:scale-110 themed-element-hover">
-            <Link href="/blog">
-              <button>Blog</button>
-            </Link>
-          </li>
-          <li className="hover:scale-110 themed-element-hover">
-            <Link href="/contact">
-              <button>Contact Me</button>
-            </Link>
-          </li>
-          <li className="hover:scale-110 themed-element-hover flex items-center">
-            <ThemeChanger />
-          </li>
+        <ul className="flex flex-col items-center [&>*]:border-b [&>*]:border-gray-300 [&>*]:m-2 [&>*]:p-1">
+          <Link
+            href="/"
+            className="transition duration-200 hover:scale-110 themed-element-hover"
+          >
+            <button>Home</button>
+          </Link>
+          <Link
+            href="/about"
+            className="transition duration-200 hover:scale-110 themed-element-hover"
+          >
+            <button>About</button>
+          </Link>
+          <Link
+            href="/portfolio"
+            className="transition duration-200 hover:scale-110 themed-element-hover"
+          >
+            <button>Portfolio</button>
+          </Link>
+          <Link
+            href="/blog"
+            className="transition duration-200 hover:scale-110 themed-element-hover"
+          >
+            <button>Blog</button>
+          </Link>
+          <Link
+            href="/contact"
+            className="transition duration-200 hover:scale-110 themed-element-hover"
+          >
+            <button>Contact Me</button>
+          </Link>
+          <ThemeChanger />
         </ul>
       )}
     </div>
