@@ -17,7 +17,7 @@ const config: Config = {
         "ping-slow": "ping 1.5s",
       },
       fontSize: {
-        "7.5xl": "5.5rem",
+        "7.5xl": "5.45rem",
       },
     },
   },

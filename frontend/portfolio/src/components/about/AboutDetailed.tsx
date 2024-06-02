@@ -1,19 +1,37 @@
-import React from "react";
+"use client";
+
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const AboutDetailed = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  });
+
+  if (!mounted) {
+    return null;
+  }
+
+  const { theme } = useTheme();
+
+  const image =
+    theme === "light" ? "code-tech-dev.svg" : "code-tech-dev white.svg";
+
   return (
-    <div>
+    <div className="pt-20 pb-10">
       <div className="flex flex-col justify-center items-center">
         <div className="absolute">
           <Image
-            src="/techstack/code-tech-dev.svg"
+            src={`/techstack/${image}`}
             width={100}
             height={100}
             alt="dev"
           />
         </div>
-        <div className="grid grid-cols-2 gap-x-56 gap-y-28">
+        <div className="grid grid-cols-2 gap-x-28 gap-y-14 sm:gap-x-56 sm:gap-y-28">
           <div className="flex flex-col items-center">
             <div className="font-extrabold text-2xl themed-element">
               Specialisation

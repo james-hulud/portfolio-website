@@ -33,24 +33,29 @@ const LinksBanner = () => {
         };
 
   return (
-    <div className="flex items-center justify-center [&>*]:mx-5 py-10">
+    <div className="flex items-center justify-center mx-5">
       <Link
         className="flex items-center font-extrabold text-xl transition hover:scale-110 duration-200"
         href="https://github.com/james-hulud"
       >
-        Github
-        <Image src={links["github"]} width={50} height={50} alt="react-icon" />
+        <Image
+          src={links["github"]}
+          className="object-contain"
+          width={30}
+          height={30}
+          alt="github"
+        />
       </Link>
       <Link
-        className="flex items-center font-extrabold text-xl transition hover:scale-110 duration-200"
+        className="flex items-center font-extrabold text-xl transition hover:scale-110 duration-200 ml-4"
         href="https://www.linkedin.com/in/james-davies-666665296/"
       >
-        Linkedin
         <Image
           src={links["linkedin"]}
-          width={50}
-          height={50}
-          alt="react-icon"
+          className="object-contain"
+          width={40}
+          height={40}
+          alt="linkedin"
         />
       </Link>
     </div>

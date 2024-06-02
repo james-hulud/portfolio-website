@@ -1,16 +1,25 @@
 "use client";
 
-import { ChangeEvent, SyntheticEvent, useState } from "react";
+import { ChangeEvent, SyntheticEvent, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 
 const ContactMe = () => {
   const router = useRouter();
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  });
+
+  if (!mounted) {
+    return null;
+  }
 
   const submitQuery = (e: SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
     e.preventDefault();
@@ -34,6 +43,11 @@ const ContactMe = () => {
       });
   };
 
+  const { theme } = useTheme();
+  const markerColour =
+    theme === "light" ? "marker:text-orange-500" : "marker:text-blue-500";
+  const colour = theme === "light" ? "text-orange-500" : "text-blue-500";
+
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) =>
     setName(e.target.value);
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) =>
@@ -46,20 +60,22 @@ const ContactMe = () => {
   return (
     <div className="flex flex-col m-10 sm:mx-10 lg:mx-60 items-center text-center  text-wrap">
       <div className="font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
-        Contact Me &#x1F468;&#x200D;&#x1F4BB;
+        Contact Me {/* &#x1F468;&#x200D;&#x1F4BB; */}
       </div>
       <div>
         <div className="py-10">
           I am currently most interested in the opportunities below:
           <div className="flex flex-col items-center">
-            <ul className="list-disc list-inside">
-              <li>Fullstack developer internships</li>
+            <ul className={`list-disc list-inside ${markerColour}`}>
               <li>12 month placement for 2025/26 academic year</li>
+              <li>Fullstack developer internships</li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="font-bold">Feel free to contact me using this form!</div>
+      <div className={`font-bold ${colour}`}>
+        Feel free to contact me using this form!
+      </div>
 
       <form
         method="POST"

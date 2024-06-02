@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useBreakpoint } from "@/hooks/useBreakpoint";
 import ThemeChanger from "./ThemeChanger";
 import HamburgerIcon from "./HamburgerIcon";
+import LinksBanner from "../about/LinksBanner";
 
 const NavChanger = () => {
   const [mounted, setMounted] = useState(false);
@@ -67,8 +68,9 @@ const Nav = () => {
   return (
     <nav className="shadow-lg bg-gray-100 nav-bg-theme">
       <div className="flex justify-between py-5 px-10">
-        <div className="font-extrabold justify-center content-center">
+        <div className="flex font-extrabold items-center">
           <Link href="/">JAMESMDAVIES.COM</Link>
+          <LinksBanner />
         </div>
         <div className="flex items-center">
           <NavChanger />

@@ -28,23 +28,23 @@ const HamburgerIcon = (props: { theme: string | undefined }) => {
   }, []);
 
   return (
-    <div id="hamburger-icon" className="p-0 m-0">
+    <div id="hamburger-icon">
       <HamburgerMenu menuPosValue={menuPosition} theme={props.theme} />
-      <ul className="flex [&>*]:m-2 [&>*]:p-1 [&>*]:transition [&>*]:duration-200">
-        <li className="hover:scale-110 themed-element-hover flex items-center border-none">
+      <ul className="flex [&>*]:transition [&>*]:duration-200">
+        <li className="hover:scale-110 themed-element-hover flex items-center">
           <label htmlFor="hamburger">
             {props.theme === "light" ? (
               <Image
                 src="/nav/menu.svg"
-                width={30}
-                height={30}
+                width={40}
+                height={40}
                 alt="light_mode"
               />
             ) : (
               <Image
                 src="/nav/menu white.svg"
-                width={30}
-                height={30}
+                width={40}
+                height={40}
                 alt="light_mode"
               />
             )}

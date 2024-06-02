@@ -140,7 +140,7 @@ https://codepen.io/colloque/pen/poOLPg */
   );
   mask-size: 200%;
   animation: shine 6s infinite;
-  color: #f97316;
+  color: #da3a00;
 }
 
 [data-theme="dark"] .shimmer {
