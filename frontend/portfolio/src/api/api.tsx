@@ -40,3 +40,16 @@ export const fetchCollaborations = async () => {
     console.log(error);
   }
 };
+
+export const fetchUpdates = async () => {
+  try {
+    const response = await fetch(`${url}updates`);
+    if (!response.ok) {
+      throw new Error("Error getting response");
+    }
+    const updatesData = await response.json();
+    return updatesData;
+  } catch (error) {
+    console.log(error);
+  }
+};

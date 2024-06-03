@@ -79,7 +79,7 @@ const ContactMe = () => {
         </div>
         <form
           method="POST"
-          className="flex flex-col items-center [&>*]:rounded [&>*]:p-1 [&>*]:my-5 [&>*]:border [&>*]:border-gray"
+          className="flex flex-col items-center [&>*]:rounded [&>*]:p-1 [&>*]:my-5 [&>*]:border [&>*]:border-gray-300"
           onSubmit={submitQuery}
         >
           <input

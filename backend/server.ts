@@ -54,7 +54,15 @@ app.get("/collaborations", async (req: Request, res: Response) => {
   }
 });
 
+app.get("/updates", async (req: Request, res: Response) => {
+  try {
+    const result = await db.query('SELECT * FROM "lifeupdate"');
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 app.listen(port as number, () => {
-  console.log(`Server is running on port ${port}`);
-  console.log(`http://localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });

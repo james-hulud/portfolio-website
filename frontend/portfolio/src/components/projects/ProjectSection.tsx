@@ -93,7 +93,9 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
   return (
     <div className="flex flex-col items-center pb-10">
       <div className="flex sm:text-2xl lg:text-3xl items-center [&>*]:mx-2 mb-5">
-        <div className="font-medium">{props.project.title}</div>
+        <div className="font-medium text-lg sm:text-2xl">
+          {props.project.title}
+        </div>
         <Link href={props.project.githubLink}>
           {theme === "light" ? (
             <Image

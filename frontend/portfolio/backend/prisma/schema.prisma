@@ -37,3 +37,9 @@ model UserQueries {
   subject    String
   message    String
 }
+
+model Updates {
+  id      Int    @id @default(autoincrement())
+  date    String
+  content String
+}
