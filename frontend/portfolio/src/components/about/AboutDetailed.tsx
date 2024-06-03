@@ -21,7 +21,12 @@ const AboutDetailed = () => {
     theme === "light" ? "code-tech-dev.svg" : "code-tech-dev white.svg";
 
   return (
-    <div className="pt-20 pb-10">
+    <div className="mt-20 mb-10">
+      <div className="flex flex-col items-center">
+        <div className="font-extrabold text-4xl sm:text-4xl md:text-5xl lg:text-5xl">
+          Skills
+        </div>
+      </div>
       <div className="flex flex-col justify-center items-center">
         <div className="absolute">
           <Image
@@ -31,7 +36,7 @@ const AboutDetailed = () => {
             alt="dev"
           />
         </div>
-        <div className="grid grid-cols-2 gap-x-28 gap-y-14 sm:gap-x-56 sm:gap-y-28">
+        <div className="grid grid-cols-2 gap-x-28 gap-y-14 sm:gap-x-56 sm:gap-y-28 mt-10">
           <div className="flex flex-col items-center">
             <div className="font-extrabold text-2xl themed-element">
               Specialisation

@@ -20,7 +20,7 @@ const About = () => {
         </div>
       </div>
       <div className="pt-10 md:pt-0 lg:pt-0 lg:pl-10 xl:pl-10">
-        <p className="text-center md:text-justify lg:text-justify font-medium">
+        <p className="text-center md:text-justify lg:text-justify">
           Hey! &#x1F44B;
         </p>
         <p className="text-justify p-0 m-0">

@@ -58,71 +58,72 @@ const ContactMe = () => {
     setMessage(e.target.value);
 
   return (
-    <div className="flex flex-col m-10 sm:mx-10 lg:mx-60 items-center text-center  text-wrap">
+    <div className="mt-10 flex flex-col items-center text-center text-wrap">
       <div className="font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
-        Contact Me {/* &#x1F468;&#x200D;&#x1F4BB; */}
+        Contact Me
       </div>
       <div>
         <div className="py-10">
           I am currently most interested in the opportunities below:
           <div className="flex flex-col items-center">
             <ul className={`list-disc list-inside ${markerColour}`}>
-              <li>12 month placement for 2025/26 academic year</li>
-              <li>Fullstack developer internships</li>
+              <li>12 month software engineer placement for 2025/26.</li>
+              <li>Fullstack developer internships.</li>
             </ul>
           </div>
         </div>
       </div>
-      <div className={`font-bold ${colour}`}>
-        Feel free to contact me using this form!
+      <div>
+        <div className={`font-bold ${colour}`}>
+          Feel free to contact me using this form!
+        </div>
+        <form
+          method="POST"
+          className="flex flex-col items-center [&>*]:rounded [&>*]:p-1 [&>*]:my-5 [&>*]:border [&>*]:border-gray"
+          onSubmit={submitQuery}
+        >
+          <input
+            name="from_name"
+            type="text"
+            placeholder="Name"
+            onChange={handleNameChange}
+            className="w-full focus:outline-none transition duration-200 form-field-theme"
+            maxLength={50}
+            required
+          />
+          <input
+            name="from_email"
+            type="email"
+            placeholder="Email"
+            onChange={handleEmailChange}
+            className="w-full focus:outline-none transition duration-200 form-field-theme"
+            maxLength={50}
+            required
+          />
+          <input
+            name="subject"
+            type="text"
+            placeholder="Subject"
+            onChange={handleSubjectChange}
+            className="w-full focus:outline-none transition duration-200 form-field-theme"
+            maxLength={100}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Message"
+            onChange={handleMessageChange}
+            className="h-32 max-h-96 min-h-32 w-full focus:outline-none transition duration-200 form-field-theme"
+            maxLength={300}
+            required
+          ></textarea>
+          <input
+            name="submit"
+            className="focus:outline-none w-full transition duration-200 form-field-theme"
+            type="submit"
+          />
+        </form>
       </div>
-
-      <form
-        method="POST"
-        className="flex flex-col items-center [&>*]:rounded [&>*]:m-5 [&>*]:p-1 [&>*]:border [&>*]:border-gray [&>*]:w-80 w-full"
-        onSubmit={submitQuery}
-      >
-        <input
-          name="from_name"
-          type="text"
-          placeholder="Name"
-          onChange={handleNameChange}
-          className="w-80 focus:outline-none transition duration-200 form-field-theme"
-          maxLength={50}
-          required
-        />
-        <input
-          name="from_email"
-          type="email"
-          placeholder="Email"
-          onChange={handleEmailChange}
-          className="w-80 focus:outline-none transition duration-200 form-field-theme"
-          maxLength={50}
-          required
-        />
-        <input
-          name="subject"
-          type="text"
-          placeholder="Subject"
-          onChange={handleSubjectChange}
-          className="w-80 focus:outline-none transition duration-200 form-field-theme"
-          maxLength={100}
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Message"
-          onChange={handleMessageChange}
-          className="h-32 max-h-96 min-h-32 w-80 focus:outline-none transition duration-200 form-field-theme"
-          maxLength={300}
-          required
-        ></textarea>
-        <input
-          name="submit"
-          className="focus:outline-none transition duration-200 form-field-theme"
-          type="submit"
-        />
-      </form>
     </div>
   );
 };

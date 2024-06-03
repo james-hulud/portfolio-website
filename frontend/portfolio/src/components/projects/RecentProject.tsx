@@ -108,7 +108,7 @@ const RecentProject = () => {
   return (
     <div className="pb-20">
       <div className="font-extrabold text-4xl sm:text-4xl md:text-5xl lg:text-5xl mb-10">
-        Most recent work...
+        Recent work...
       </div>
       <div className="flex flex-col items-center">
         <div
