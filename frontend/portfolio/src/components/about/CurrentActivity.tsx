@@ -13,7 +13,7 @@ interface updateObject {
 const UpdateSection = (props: { update: updateObject }) => {
   return (
     <>
-      {props.update.id !== 1 ? (
+      {props.update.id === 1 ? (
         <>
           <br />
           <br />

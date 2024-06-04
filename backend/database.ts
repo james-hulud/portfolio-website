@@ -78,7 +78,7 @@ const insert = async () => {
   const db = new Database();
 
   const result = await db.query(`
-  SELECT EXISTS(SELECT 1 FROM lifeupdate WHERE id=1)
+  SELECT EXISTS(SELECT 1 FROM lifeupdate WHERE id=2)
   `);
 
   console.log(result);
@@ -88,13 +88,9 @@ const insert = async () => {
   db.query(`
   INSERT INTO lifeupdate (date, content)
   VALUES (
-    'June 3, 2024',
+    'June 4, 2024',
     '
-    I recently secured an internship with Cardiff University!
-    The purpose of the role is to adapt the frontend and backend of the web application FreeTxt.
-    The app can be used to analyse qualitative survey responses,
-    utilising natural language processing it can provide information such as general text sentiment, summarisations and more.
-    It was made using Flask and will be an exciting project to work on!
+    Portfolio website is launched!
     '
   )
   `);
