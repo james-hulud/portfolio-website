@@ -59,7 +59,8 @@ const CurrentActivity = () => {
   }
 
   return (
-    <div className="mt-20 mb-10">
+    <div>
+      <br />
       <div className="font-extrabold text-xl sm:text-xl md:text-2xl lg:text-2xl">
         Updates on me
         <br />

@@ -17,7 +17,7 @@ const TechStackBanner = () => {
     return null;
   }
   return (
-    <div className="flex flex-col items-center pt-10">
+    <div className="flex flex-col items-center py-10">
       <div className="font-bold text-lg">Tech Stack</div>
       <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row">
         <span className="flex [&>*]:mx-4 [&>*]:mt-4 [&>*]:object-contain">
