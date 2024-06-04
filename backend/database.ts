@@ -78,7 +78,7 @@ const insert = async () => {
   const db = new Database();
 
   const result = await db.query(`
-  SELECT EXISTS(SELECT 1 FROM lifeupdate WHERE id=2)
+  SELECT EXISTS(SELECT 1 FROM lifeupdate WHERE id=4)
   `);
 
   console.log(result);
