@@ -31,7 +31,8 @@ const About = () => {
           <br />
           <br />I made this website to showcase my software projects. Here you
           will find what I have made (including what I made it with), what I am
-          currently making, and any thoughts of mine, you'll find these on my{" "}
+          currently making, and any thoughts of mine, you&apos;ll find these on
+          my{" "}
           <Link href="/blog" className="themed-element font-medium">
             blog
           </Link>

@@ -12,10 +12,11 @@ const ContactMe = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
-  });
+  }, []);
 
   if (!mounted) {
     return null;
@@ -43,7 +44,6 @@ const ContactMe = () => {
       });
   };
 
-  const { theme } = useTheme();
   const markerColour =
     theme === "light" ? "marker:text-orange-500" : "marker:text-blue-500";
   const colour = theme === "light" ? "text-orange-500" : "text-blue-500";
