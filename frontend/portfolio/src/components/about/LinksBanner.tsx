@@ -25,11 +25,11 @@ const LinksBanner = () => {
     theme === "light"
       ? {
           ["github"]: "/external/github.svg",
-          ["linkedin"]: "/external/social-linkedin.svg",
+          ["linkedin"]: "/external/linkedin.svg",
         }
       : {
           ["github"]: "/external/github white.svg",
-          ["linkedin"]: "/external/social-linkedin white.svg",
+          ["linkedin"]: "/external/linkedin white.svg",
         };
 
   return (
@@ -53,8 +53,8 @@ const LinksBanner = () => {
         <Image
           src={links["linkedin"]}
           className="object-contain"
-          width={40}
-          height={40}
+          width={30}
+          height={30}
           alt="linkedin"
         />
       </Link>

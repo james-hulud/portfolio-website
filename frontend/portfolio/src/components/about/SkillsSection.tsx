@@ -20,13 +20,13 @@ const SkillsSection = () => {
 
   const image =
     theme === "light" ? "code-tech-dev.svg" : "code-tech-dev white.svg";
-  const imgSize = isSm ? 100 : 75;
+  const imgSize = isSm ? 150 : 100;
 
   return (
     <div className="mt-20 mb-10">
       <div className="flex flex-col items-center">
         <div className="font-extrabold text-4xl sm:text-4xl md:text-5xl lg:text-5xl">
-          Skills
+          My skills
         </div>
       </div>
       <div className="mt-10 flex items-center justify-center w-full">
