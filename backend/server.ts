@@ -18,7 +18,6 @@ const db = new Database();
 //   },
 // };
 
-app.use(express.static("../frontend/.next"));
 // Allows fetch requests in client components
 app.use(cors());
 
