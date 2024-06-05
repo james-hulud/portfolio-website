@@ -25,6 +25,7 @@ const HamburgerIcon = (props: { theme: string | undefined }) => {
     return () => {
       document.body.removeEventListener("click", closeMenuFromOutsideClick);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
