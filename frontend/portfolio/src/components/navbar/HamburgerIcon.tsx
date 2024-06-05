@@ -25,7 +25,7 @@ const HamburgerIcon = (props: { theme: string | undefined }) => {
     return () => {
       document.body.removeEventListener("click", closeMenuFromOutsideClick);
     };
-  });
+  }, []);
 
   return (
     <div id="hamburger-icon">
