@@ -5,7 +5,8 @@
   "proxy": "http://localhost:3001",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && cd ../../backend && npm install",
+    "start-client": "next start",
     "start": "next start",
     "lint": "next lint"
   },

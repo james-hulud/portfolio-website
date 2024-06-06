@@ -15,22 +15,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const database_1 = require("./database");
 const cors_1 = __importDefault(require("cors"));
+const path_1 = __importDefault(require("path"));
+const http_1 = __importDefault(require("http"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3001;
 const db = new database_1.Database();
-// TODO: Only allow requests to be made from the domain name my website is using, security
-// const whitelist = ['https://your-application.com'];
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-// };
+const server = http_1.default.createServer(app);
+const _dirname = path_1.default.dirname("");
+const buildPath = path_1.default.join(_dirname, "../frontend/portfolio/.next");
 // Allows fetch requests in client components
 app.use((0, cors_1.default)());
+app.use(express_1.default.static(buildPath));
+app.get("/*", (req, res) => {
+    res.sendFile(path_1.default.join(_dirname, ""));
+});
 app.get("/projects", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const result = yield db.query("SELECT * FROM \"Project\" WHERE title != 'Example Project';");

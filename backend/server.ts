@@ -1,25 +1,33 @@
 import express, { Request, Response } from "express";
 import { Database } from "./database";
 import cors from "cors";
+import path from "path";
+import http, { Server } from "http";
 
 const app = express();
 const port = process.env.PORT || 3001;
 const db = new Database();
 
-// TODO: Only allow requests to be made from the domain name my website is using, security
-// const whitelist = ['https://your-application.com'];
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-// };
+const server = http.createServer(app);
+
+const _dirname = path.dirname("");
+const buildPath = path.join(_dirname, "../frontend/portfolio/.next");
 
 // Allows fetch requests in client components
 app.use(cors());
+
+app.use(express.static(buildPath));
+
+app.get("/*", (req, res) => {
+  res.sendFile(
+    path.join(_dirname, "../frontend/portfolio/dist/index.html"),
+    (error) => {
+      if (error) {
+        res.status(500).send(error);
+      }
+    }
+  );
+});
 
 app.get("/projects", async (req: Request, res: Response) => {
   try {

@@ -32,7 +32,7 @@ const SkillsSection = () => {
       <div className="mt-10 flex items-center justify-center w-full">
         <Image
           src={`/techstack/${image}`}
-          className="absolute"
+          className="absolute opacity-25"
           width={imgSize}
           height={imgSize}
           alt="dev"

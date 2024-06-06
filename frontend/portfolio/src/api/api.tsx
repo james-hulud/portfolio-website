@@ -1,4 +1,6 @@
-const url = "http://localhost:3001/";
+const url = "http://james-mbp:3001/";
+
+// "http://localhost:3001/" || 
 
 export const fetchProjects = async () => {
   try {
