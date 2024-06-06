@@ -2,32 +2,17 @@ import express, { Request, Response } from "express";
 import { Database } from "./database";
 import cors from "cors";
 import path from "path";
-import http, { Server } from "http";
 
 const app = express();
 const port = process.env.PORT || 3001;
 const db = new Database();
 
-const server = http.createServer(app);
-
-const _dirname = path.dirname("");
-const buildPath = path.join(_dirname, "../frontend/portfolio/.next");
+const buildPath = path.join(__dirname, "../frontend/portfolio/.next");
 
 // Allows fetch requests in client components
 app.use(cors());
 
 app.use(express.static(buildPath));
-
-app.get("/*", (req, res) => {
-  res.sendFile(
-    path.join(_dirname, "../frontend/portfolio/dist/index.html"),
-    (error) => {
-      if (error) {
-        res.status(500).send(error);
-      }
-    }
-  );
-});
 
 app.get("/projects", async (req: Request, res: Response) => {
   try {
@@ -71,6 +56,6 @@ app.get("/updates", async (req: Request, res: Response) => {
   }
 });
 
-app.listen(port as number || 3001, () => {
+app.listen((port as number) || 3001, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
