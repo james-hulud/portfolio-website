@@ -93,7 +93,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
   return (
     <div className="flex flex-col items-center pb-10">
       <div className="flex sm:text-2xl lg:text-3xl items-center [&>*]:mx-2 mb-5">
-        <div className="font-medium text-lg sm:text-2xl">
+        <div className="font-medium text-base sm:text-2xl md:text-3xl">
           {props.project.title}
         </div>
         <Link href={props.project.githubLink}>

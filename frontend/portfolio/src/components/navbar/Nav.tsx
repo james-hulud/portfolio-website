@@ -25,7 +25,7 @@ const NavChanger = () => {
 
   return !isMd && !isLg ? (
     <div>
-      <HamburgerIcon theme={theme} />
+      <HamburgerIcon />
     </div>
   ) : (
     <ul className="flex [&>*]:border-b [&>*]:border-gray-300 [&>*]:m-2 [&>*]:p-1">
