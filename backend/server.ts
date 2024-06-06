@@ -71,6 +71,6 @@ app.get("/updates", async (req: Request, res: Response) => {
   }
 });
 
-app.listen(port as number, () => {
+app.listen(port as number || 3001, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
