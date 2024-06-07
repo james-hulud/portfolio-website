@@ -66,7 +66,7 @@ const Nav = () => {
     <nav className="shadow-lg bg-gray-100 nav-bg-theme">
       <div className="flex justify-between py-5 px-10">
         <div className="flex font-extrabold items-center">
-          <Link href="/" className="transition hover:scale-110 duration-200">
+          <Link href="/" className="transition hover:scale-110 duration-200 text-xl">
             JAMES DAVIES
           </Link>
           <LinksBanner />
