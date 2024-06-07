@@ -23,7 +23,7 @@ const About = () => {
         <p className="text-center md:text-justify lg:text-justify">
           Hey! &#x1F44B;
         </p>
-        <p className="text-justify p-0 m-0">
+        <p className="text-center sm:text-justify p-0 m-0">
           <br />
           I&apos;m James, a Computer Science student from Cardiff, Wales. I love
           building websites and any other software projects I can think of,

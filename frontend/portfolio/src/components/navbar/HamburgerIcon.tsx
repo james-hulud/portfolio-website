@@ -30,7 +30,7 @@ const HamburgerIcon = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const hamburgerIcon = theme === "light" ? "menu.svg" : "menu white.svg";
+  const hamburgerIcon = theme === "dark" ? "menu white.svg" : "menu.svg";
 
   return (
     <div id="hamburger-icon">

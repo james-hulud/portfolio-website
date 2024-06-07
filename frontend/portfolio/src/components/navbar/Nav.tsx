@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { useBreakpoint } from "@/hooks/useBreakpoint";
 import ThemeChanger from "./ThemeChanger";
@@ -11,8 +10,6 @@ import LinksBanner from "../about/LinksBanner";
 const NavChanger = () => {
   const [mounted, setMounted] = useState(false);
 
-  const { theme } = useTheme();
-  const { isMd } = useBreakpoint("md");
   const { isLg } = useBreakpoint("lg");
 
   useEffect(() => {
@@ -23,7 +20,7 @@ const NavChanger = () => {
     return null;
   }
 
-  return !isMd && !isLg ? (
+  return !isLg ? (
     <div>
       <HamburgerIcon />
     </div>

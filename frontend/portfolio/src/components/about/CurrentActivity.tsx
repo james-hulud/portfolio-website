@@ -18,7 +18,9 @@ const UpdateSection = (props: { update: updateObject }) => {
           <br />
           <br />
           <div className="border border-gray-300 rounded p-5">
-            <p className="text-justify text-wrap">{props.update.content}</p>
+            <p className="text-center sm:text-justify text-wrap">
+              {props.update.content}
+            </p>
             <div className="text-wrap font-bold flex flex-row-reverse">
               {props.update.date}
             </div>
@@ -26,7 +28,7 @@ const UpdateSection = (props: { update: updateObject }) => {
         </>
       ) : (
         <div className="border border-gray-300 rounded p-5">
-          <p className="text-justify text-wrap">{props.update.content}</p>
+          <p className="text-wrap">{props.update.content}</p>
           <div className="text-wrap font-bold flex flex-row-reverse">
             {props.update.date}
           </div>

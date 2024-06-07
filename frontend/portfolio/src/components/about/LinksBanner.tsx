@@ -22,14 +22,14 @@ const LinksBanner = () => {
   }
 
   const links: LinksDict =
-    theme === "light"
+    theme === "dark"
       ? {
-          ["github"]: "/external/github.svg",
-          ["linkedin"]: "/external/linkedin.svg",
-        }
-      : {
           ["github"]: "/external/github white.svg",
           ["linkedin"]: "/external/linkedin white.svg",
+        }
+      : {
+          ["github"]: "/external/github.svg",
+          ["linkedin"]: "/external/linkedin.svg",
         };
 
   return (

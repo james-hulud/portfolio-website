@@ -53,7 +53,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
     ["html"]: "file-type-html.svg",
     ["bootstrap"]: "bootstrap.svg",
     ["js"]: "javascript-js.svg",
-    ["flask"]: theme === "light" ? "flask.svg" : "flask white.svg",
+    ["flask"]: theme === "dark" ? "flask white.svg" : "flask.svg",
     ["python"]: "python.svg",
     ["postgresql"]: "",
     ["tailwind"]: "",
@@ -93,7 +93,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
   return (
     <div className="flex flex-col items-center pb-10">
       <div className="flex sm:text-2xl lg:text-3xl items-center [&>*]:mx-2 mb-5">
-        <div className="font-medium text-base sm:text-2xl md:text-3xl">
+        <div className="font-medium text-base text-center text sm:text-2xl md:text-3xl">
           {props.project.title}
         </div>
         <Link href={props.project.githubLink}>
@@ -173,7 +173,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
         </div>
       </div>
       <div>
-        <p id="desc" className="my-5 text-justify">
+        <p id="desc" className="my-5 text-center sm:text-justify">
           {props.project.description}
         </p>
       </div>

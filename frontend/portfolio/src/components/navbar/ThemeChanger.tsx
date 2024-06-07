@@ -8,7 +8,6 @@ import { useBreakpoint } from "@/hooks/useBreakpoint";
 const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const { isMd } = useBreakpoint("md");
   const { isLg } = useBreakpoint("lg");
 
   useEffect(() => {
@@ -24,7 +23,7 @@ const ThemeChanger = () => {
       onClick={() => setTheme("dark")}
       className="transition duration-200 hover:scale-110 themed-element-hover border-b border-gray-300"
     >
-      {!isMd && !isLg ? (
+      {!isLg ? (
         <Image
           src="/nav/moon.svg"
           width={30}
@@ -47,7 +46,7 @@ const ThemeChanger = () => {
       onClick={() => setTheme("light")}
       className="transition duration-200 hover:scale-110 themed-element-hover border-b border-gray-300"
     >
-      {!isMd && !isLg ? (
+      {!isLg ? (
         <Image
           src="/nav/sun white.svg"
           width={30}

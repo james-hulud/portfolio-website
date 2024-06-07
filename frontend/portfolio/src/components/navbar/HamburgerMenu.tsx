@@ -27,12 +27,12 @@ const HamburgerMenu = (props: {
     };
   }, []);
 
-  const backgroundColour = theme === "light" ? "bg-gray-100" : "bg-black";
+  const backgroundColour = theme === "dark" ? "bg-black" : "bg-gray-100";
 
   return (
     <div
       id="menu"
-      className={`fixed text-2xl top-0 left-0 w-[50vw] h-full content-center items-center bg-opacity-80 backdrop-blur-lg z-50 ${backgroundColour}`}
+      className={`p-0 m-0 fixed text-2xl top-0 left-0 w-[50vw] h-full flex items-center justify-center bg-opacity-80 backdrop-blur-lg z-50 ${backgroundColour}`}
       style={{
         left: `${props.menuPosValue}%`,
         transition: "left 0.5s ease",
