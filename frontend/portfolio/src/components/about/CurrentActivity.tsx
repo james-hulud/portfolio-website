@@ -3,6 +3,7 @@
 import { fetchUpdates } from "@/api/api";
 import { useEffect, useState } from "react";
 import Loading from "../data/Loading";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
 
 interface updateObject {
   id: number;
@@ -11,6 +12,8 @@ interface updateObject {
 }
 
 const UpdateSection = (props: { update: updateObject }) => {
+  const { isSm } = useBreakpoint("sm");
+
   return (
     <>
       {props.update.id === 1 ? (
@@ -21,6 +24,13 @@ const UpdateSection = (props: { update: updateObject }) => {
             <p className="text-center sm:text-justify text-wrap">
               {props.update.content}
             </p>
+            {isSm ? (
+              <></>
+            ) : (
+              <>
+                <br />
+              </>
+            )}
             <div className="text-wrap font-bold flex flex-row-reverse">
               {props.update.date}
             </div>
@@ -29,6 +39,13 @@ const UpdateSection = (props: { update: updateObject }) => {
       ) : (
         <div className="border border-gray-300 rounded p-5">
           <p className="text-wrap">{props.update.content}</p>
+          {isSm ? (
+            <></>
+          ) : (
+            <>
+              <br />
+            </>
+          )}
           <div className="text-wrap font-bold flex flex-row-reverse">
             {props.update.date}
           </div>
