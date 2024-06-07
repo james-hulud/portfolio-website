@@ -18,7 +18,7 @@ const RecentProject = () => {
   const slideshowImgs: React.JSX.Element[] = [];
   const { isMd } = useBreakpoint("md");
   const { isLg } = useBreakpoint("lg");
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [project, setProject] = useState<ProjectObject>({} as ProjectObject);
   const [loading, setLoading] = useState(true);
 
@@ -68,7 +68,7 @@ const RecentProject = () => {
     ["html"]: "file-type-html.svg",
     ["bootstrap"]: "bootstrap.svg",
     ["js"]: "javascript-js.svg",
-    ["flask"]: theme === "light" ? "flask.svg" : "flask white.svg",
+    ["flask"]: resolvedTheme === "light" ? "flask.svg" : "flask white.svg",
     ["python"]: "python.svg",
     ["postgresql"]: "",
     ["tailwind"]: "",
@@ -115,7 +115,7 @@ const RecentProject = () => {
           className="overflow-hidden rounded shadow-2xl flex items-center justify-center"
           onClick={controlAnimation}
         >
-          {theme === "light" ? (
+          {resolvedTheme === "light" ? (
             <>
               <div className="absolute z-50">
                 <Image

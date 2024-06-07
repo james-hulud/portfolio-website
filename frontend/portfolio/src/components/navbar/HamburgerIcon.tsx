@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 const HamburgerIcon = () => {
   const [menuPosition, setMenuPosition] = useState(-100);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const moveMenu = () => {
     if (menuPosition == -100) setMenuPosition(0);
@@ -30,11 +30,11 @@ const HamburgerIcon = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const hamburgerIcon = theme === "dark" ? "menu white.svg" : "menu.svg";
+  const hamburgerIcon = resolvedTheme === "dark" ? "menu white.svg" : "menu.svg";
 
   return (
     <div id="hamburger-icon">
-      <HamburgerMenu menuPosValue={menuPosition} theme={theme} />
+      <HamburgerMenu menuPosValue={menuPosition} theme={resolvedTheme} />
       <ul className="flex [&>*]:transition [&>*]:duration-200">
         <li className="hover:scale-110 themed-element-hover flex items-center">
           <label htmlFor="hamburger">

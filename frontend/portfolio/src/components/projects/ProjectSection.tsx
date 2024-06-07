@@ -24,7 +24,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
   const slideshowImgs: React.JSX.Element[] = [];
   const { isMd } = useBreakpoint("md");
   const { isLg } = useBreakpoint("lg");
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   let buttonSize = !isMd && !isLg ? 30 : 50;
 
@@ -53,7 +53,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
     ["html"]: "file-type-html.svg",
     ["bootstrap"]: "bootstrap.svg",
     ["js"]: "javascript-js.svg",
-    ["flask"]: theme === "dark" ? "flask white.svg" : "flask.svg",
+    ["flask"]: resolvedTheme === "dark" ? "flask white.svg" : "flask.svg",
     ["python"]: "python.svg",
     ["postgresql"]: "",
     ["tailwind"]: "",
@@ -97,7 +97,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
           {props.project.title}
         </div>
         <Link href={props.project.githubLink}>
-          {theme === "light" ? (
+          {resolvedTheme === "light" ? (
             <Image
               className="transition-opacity duration-200 hover:opacity-50"
               src="/external/github.svg"
@@ -120,7 +120,7 @@ const ProjectSection = (props: { project: ProjectObject; index: string }) => {
         className="overflow-hidden rounded shadow-2xl flex items-center justify-center"
         onClick={controlAnimation}
       >
-        {theme === "light" ? (
+        {resolvedTheme === "light" ? (
           <>
             <div className="absolute z-50">
               <Image

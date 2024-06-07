@@ -7,7 +7,7 @@ import { useBreakpoint } from "@/hooks/useBreakpoint";
 
 const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const { isLg } = useBreakpoint("lg");
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const ThemeChanger = () => {
     return null;
   }
 
-  return theme === "light" ? (
+  return resolvedTheme === "light" ? (
     <button
       onClick={() => setTheme("dark")}
       className="transition duration-200 hover:scale-110 themed-element-hover border-b border-gray-300"

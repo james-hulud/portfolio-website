@@ -9,7 +9,7 @@ const HamburgerMenu = (props: {
   menuPosValue: number;
   theme: string | undefined;
 }) => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [orientation, setOrientation] = useState(getOrientation());
 
   function getOrientation() {
@@ -27,7 +27,7 @@ const HamburgerMenu = (props: {
     };
   }, []);
 
-  const backgroundColour = theme === "dark" ? "bg-black" : "bg-gray-100";
+  const backgroundColour = resolvedTheme === "dark" ? "bg-black" : "bg-gray-100";
 
   return (
     <div

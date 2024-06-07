@@ -7,7 +7,7 @@ import { useBreakpoint } from "@/hooks/useBreakpoint";
 
 const SkillsSection = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const { isSm } = useBreakpoint("sm");
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const SkillsSection = () => {
   }
 
   const image =
-    theme === "light" ? "code-tech-dev.svg" : "code-tech-dev white.svg";
+    resolvedTheme === "light" ? "code-tech-dev.svg" : "code-tech-dev white.svg";
   const imgSize = isSm ? 150 : 100;
 
   return (

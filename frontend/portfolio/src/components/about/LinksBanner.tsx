@@ -10,7 +10,7 @@ type LinksDict = {
 };
 
 const LinksBanner = () => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const LinksBanner = () => {
   }
 
   const links: LinksDict =
-    theme === "dark"
+    resolvedTheme === "dark"
       ? {
           ["github"]: "/external/github white.svg",
           ["linkedin"]: "/external/linkedin white.svg",

@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 const TechStackBanner = () => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const [mounted, setMounted] = useState(false);
 
@@ -47,7 +47,7 @@ const TechStackBanner = () => {
             height={50}
             alt="react-icon"
           />
-          {theme === "light" ? (
+          {resolvedTheme === "light" ? (
             <Image
               src="/techstack/nextjs.svg"
               width={50}
@@ -62,7 +62,7 @@ const TechStackBanner = () => {
               alt="react-icon"
             />
           )}
-          {theme === "light" ? (
+          {resolvedTheme === "light" ? (
             <Image
               src="/techstack/flask.svg"
               width={50}
