@@ -24,11 +24,11 @@ const LinksBanner = () => {
   const links: LinksDict =
     resolvedTheme === "dark"
       ? {
-          ["github"]: "/external/github white.svg",
+          ["github"]: "/external/github-mark-white.svg",
           ["linkedin"]: "/external/linkedin white.svg",
         }
       : {
-          ["github"]: "/external/github.svg",
+          ["github"]: "/external/github-mark.svg",
           ["linkedin"]: "/external/linkedin.svg",
         };
 
